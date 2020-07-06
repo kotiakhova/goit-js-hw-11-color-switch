@@ -18,20 +18,23 @@ let isActive = true;
 
 startButton.addEventListener('click', (event) => { 
   if (isActive) {timerId = setInterval(() => {
-    isActive = false;
+    
+    console.log(isActive);
     colorChanger(); 
-}, 1000);}}
+}, 1000);}
+isActive = false;}
 );
 
 
 stopButton.addEventListener('click', (event) => {
   clearTimeout(timerId);
   isActive = true;
+  console.log(isActive);
 }
 );
 const colorChanger = () => {
     body.setAttribute("style", `background: ${colors[randomIntegerFromInterval(0,5)]};`);
-    console.log('ffd')
+
 
   };
 
